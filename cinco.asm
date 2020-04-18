@@ -3,7 +3,7 @@
 .DATA
 .CODE
 main: 
-   
+   ;EN ESE ARCHIVO ESTÁ INCLUIDO LA TAREA 6
     
     call lee2
      mov dl,bl ;Se pasa por parámetro a la función
