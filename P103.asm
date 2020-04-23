@@ -1,3 +1,17 @@
+ ;2. Considerando los algoritmos descritos en esa sección, 
+ ;haga un programa que lea un dígito hexadecimal 
+ ;(puede ser con mayúsculas o minúsculas), le sume 1 y lo despliegue.
+;Ejemplos:
+;Entr Sal
+;4
+;--->5
+;9
+;--->A
+;c
+;--->D
+;C
+;--->D
+;Observe que la salida entre A y F siempre es mayúscula.
 .MODEL SMALL
 .STACK
 .DATA

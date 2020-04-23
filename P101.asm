@@ -1,3 +1,14 @@
+; 3. Hacer programa que lea un dígito del teclado, y si es menor que 6,
+; desplegar "ya valiste queso".
+;Ejemplo:
+;4
+;ya valiste queso
+;8
+;(no despliega nada)
+;4. Agregar al programa anterior que si el dígito es mayor o igual que 6, desplegar "eres supermán".
+;Ejemplo:
+;8
+;eres superman
 .MODEL SMALL
 .STACK
 .DATA

@@ -17,7 +17,7 @@ extrn lee4:near
 .stack
 .data
 
-msg db 10,13,'Segunda multiplicacion ',10,13,'$'
+msg db 10,13,'Segunda division ',10,13,'$'
 .code
 main proc
     mov ax,@data
@@ -38,6 +38,8 @@ main proc
     call reto
     call des2
     call reto
+    lea dx,msg
+    call desm
 ;Si la operación es de 32 bits enter 16 bits, 
 ;el dividendo está DX-AX y el divisor en un registro de 16 bits.
 ; Por ejemplo 'DIV CX' hará DX-AX/CX, cociente en AX y residuo en DX.

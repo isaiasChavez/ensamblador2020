@@ -8,16 +8,18 @@
 extrn reto:near
 extrn lee4:near
 extrn des2:near
-
+extrn desm:near
 .stack
 .data
-dato db 'abcdefghijklmnaaaaaaaaaaaaaaaaaaaaa','$'
+dato db 'aaaaaaaEsta es la cadena en el segmento de datos','$'
+
 
 
 .code
 main:	
     mov ax,@data
 	mov ds,ax
+
 	
 	lea bx,dato
 

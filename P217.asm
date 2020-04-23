@@ -9,12 +9,14 @@ extrn reto:near
 extrn lee2:near
 extrn des2:near
 extrn reto:near
+extrn desm:near
 .stack
 .data
 .code
 main:	
     mov ax,@data
 	mov ds,ax
+	
 	call lee2
 	push ax	
 	call lee2
@@ -26,7 +28,7 @@ main:
 
 	CALL mayor
 	ADD SP,08	;4 push * 2 = 8
-		
+	call reto
 	mov dl,al
 	call des2
 	.exit

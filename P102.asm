@@ -1,3 +1,6 @@
+;1. Verificar que nos quedó el programa del alfabeto de la actividad 1.
+ ;Les mostraré un algoritmo en seudocódigo que hace lo mismo, si les puede servir:
+
 .MODEL SMALL
 .STACK
 .DATA
