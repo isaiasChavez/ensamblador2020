@@ -1,3 +1,4 @@
+
 .model small
 public lee1
 public lee2
@@ -12,6 +13,32 @@ public des2n
 
 .stack
 .code
+leerc:;Necesita una variable llamada buff con el tamaño máximo de la cadena
+      ;También un bit extra y 
+      ;la variable cadena donde se recibirá la cadena
+
+
+	mov dx,offset buf
+	mov ah,0Ah
+	int 21h
+	
+	mov bx, offset buf
+	add bx,01h
+    mov dx,[bx]
+	mov cx,dx
+
+    call des2
+	call reto
+	
+	mov bx,offset buf
+	add bl,cl
+	add bl,02h
+	mov [bx],24h
+    ;deja el resultado en la variable cadena
+
+ 
+	ret
+
 lee1: 
     
     mov ah,01h
