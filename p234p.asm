@@ -1,21 +1,13 @@
 .model small
-
+.386
+extrn	des4:near
+extrn	reto:near
+extrn	des2:near
+.stack
+.data
+ndir	db 164 dup(0)
 .stack
 .code
-pintar	macro color,corx,cory
-
-	
-	;Desplegar algo
-	mov al,color	;Amarillo.
-	mov ah,0Ch	;Función escribir punto .
-	mov cx,corx	;Coordenada X.
-	mov dx,cory	;Coordenada Y.
-	int 10h
-	
-
-endm
-
-
 main:	;Leer configuración de pantalla y guardarla en la pila
 	mov ah,0fh	;Función leer modo.
 	int 10h
@@ -24,29 +16,26 @@ main:	;Leer configuración de pantalla y guardarla en la pila
 	mov ah,0	;Función establecer modo.
 	mov al,12h
 	int 10h
-;----------------------------
-	mov dx,0100
-	mov bx,0100
-	push cxv cx,20h
-sas:
-	mov bx,0100
-	push cx
-	mov cx,09h
-	pinx:
-		sub bx,1h
-		pintar 08h bx dx
-	loop pinx
+	;Desplegar algo
+	mov al,0Eh	;Amarillo.
+	mov ah,0Ch	;Función escribir punto .
+	mov cx,0200	;Coordenada X.
+    salta:
+	mov dx,0280	;Coordenada Y.
+    salta2:
+	int 10h
+    inc dx
+    cmp dx,300
+    je salt3
+    jmp salta2
 
-	pop cx
-	dec dx
-loop sas
-	
-	
-	
+salt3:
+    cmp cx,400
+    je fin
+    inc cx
+    jmp salta
 
-
-termina:
-
+fin:   
 	;Esperar usuario (para que no termine sin poder ver)
 	mov ah,00h
 	int 16h
@@ -55,8 +44,7 @@ termina:
 	mov dl,al
 	mov ah,0	;Función establecer modo
 	int 10h		;Establecer. Queda como al principio.
-
-
-
- fin:	.exit 0
+	call des2
+	call reto
+ 	.exit 0
 end
