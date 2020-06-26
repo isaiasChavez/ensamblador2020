@@ -6,7 +6,7 @@ extrn	des2:near
 .stack
 .data
 RADIOB	dt	10h	;Flotante de 80 bits.
-AREAB	dt	0	;32 bits.
+AREAB	dt	0	
 AREAC dt 0 
 MIL	dt	1000000	;Entero 32 bits.
 
